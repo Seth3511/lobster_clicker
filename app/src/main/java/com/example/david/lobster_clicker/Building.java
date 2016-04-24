@@ -12,4 +12,7 @@ public class Building {
         cost=baseCost;
         n=num;
     }
+    public int buildCost(){
+        return (int) (cost * Math.pow(1.15,n));
+    }
 }
