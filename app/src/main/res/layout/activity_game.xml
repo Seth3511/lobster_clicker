@@ -15,8 +15,7 @@
         android:text="Home"
         android:id="@+id/home"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="54dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="115dp"
@@ -36,4 +35,48 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powerup X5"
+        android:id="@+id/powerup1"
+        android:layout_above="@+id/home"
+        android:layout_marginBottom="28dp"
+        android:layout_toLeftOf="@+id/home"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powerup X12"
+        android:id="@+id/powerup2"
+        android:layout_alignBottom="@+id/powerup1"
+        android:layout_toRightOf="@+id/home"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/powerupCost1"
+        android:layout_below="@+id/powerup2"
+        android:layout_alignRight="@+id/powerup1"
+        android:layout_alignEnd="@+id/powerup1"
+        android:layout_alignLeft="@+id/powerup1"
+        android:layout_alignStart="@+id/powerup1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/powerupCost2"
+        android:layout_alignTop="@+id/powerupCost1"
+        android:layout_alignLeft="@+id/powerup2"
+        android:layout_alignStart="@+id/powerup2"
+        android:layout_alignRight="@+id/powerup2"
+        android:layout_alignEnd="@+id/powerup2" />
 </RelativeLayout>
