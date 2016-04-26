@@ -9,8 +9,8 @@ public class Powerups
 	private double powerupTwoCost;  //base cost of second power up.
 	private double oneIncrease;	 //multiplier for increasing the cost of the first powerup.
 	private double twoIncrease;   //multiplier for increasing the cost of the second powerup.
-	private int mOne;	//5x multiplier.
-	private int mTwo;   //12x multiplier.
+	private int mOne;	//2x multiplier.
+	private int mTwo;   //3x multiplier.
 	public Powerups()
 	{
 		powerupOneCost = 5000;
@@ -60,7 +60,7 @@ public class Powerups
 	private void increaseTwo()
 	{
 		powerupTwoCost = powerupTwoCost * twoIncrease;
-		twoIncrease+= .2;
+		twoIncrease+= .5;
 	}
 	public double getPowerupOneCost(){return (int)powerupOneCost;}
 	public double getPowerupTwoCost(){return (int)powerupTwoCost;}

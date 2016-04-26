@@ -36,14 +36,14 @@
         android:layout_alignLeft="@+id/imageView" />
 
     <TextView
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="0 Lobsters"
         android:id="@+id/countDisplay"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
 
     <Button
         android:layout_width="wrap_content"
@@ -74,8 +74,8 @@
         android:id="@+id/powerupCost1"
         android:gravity="center"
         android:layout_below="@+id/powerup2"
-        android:layout_alignLeft="@+id/lobster"
-        android:layout_alignStart="@+id/lobster" />
+        android:layout_toLeftOf="@+id/countDisplay"
+        android:layout_toStartOf="@+id/countDisplay" />
 
     <TextView
         android:layout_width="75dp"
@@ -83,9 +83,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/powerupCost2"
         android:gravity="center"
-        android:layout_alignTop="@+id/powerupCost1"
-        android:layout_alignRight="@+id/lobster"
-        android:layout_alignEnd="@+id/lobster" />
+        android:layout_below="@+id/powerup2"
+        android:layout_toRightOf="@+id/countDisplay"
+        android:layout_toEndOf="@+id/countDisplay" />
 
 
 </RelativeLayout>
