@@ -13,8 +13,8 @@ public class Powerups
 	private int mTwo;   //12x multiplier.
 	public Powerups()
 	{
-		powerupOneCost = 1000;
-		powerupTwoCost = 2000;
+		powerupOneCost = 5000;
+		powerupTwoCost = 10000;
 		oneIncrease= 1.1;
 		twoIncrease= 1.5;
 		mOne = 2;

@@ -17,14 +17,23 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/simpsons"
+        android:id="@+id/imageView"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/countDisplay"
+        android:layout_centerHorizontal="true"
+        android:elevation="@dimen/abc_floating_window_z" />
+
     <Button
-        android:layout_width="115dp"
-        android:layout_height="100dp"
+        android:layout_width="265dp"
+        android:layout_height="200dp"
         android:text="Lobster"
         android:id="@+id/lobster"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="89dp" />
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView" />
 
     <TextView
         android:layout_width="200dp"
@@ -39,7 +48,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Powerup X5"
+        android:text="Powerup X2"
         android:id="@+id/powerup1"
         android:layout_above="@+id/home"
         android:layout_marginBottom="28dp"
@@ -51,7 +60,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Powerup X12"
+        android:text="Powerup X3"
         android:id="@+id/powerup2"
         android:layout_alignBottom="@+id/powerup1"
         android:layout_toRightOf="@+id/home"
@@ -59,24 +68,24 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/powerupCost1"
+        android:gravity="center"
         android:layout_below="@+id/powerup2"
-        android:layout_alignRight="@+id/powerup1"
-        android:layout_alignEnd="@+id/powerup1"
-        android:layout_alignLeft="@+id/powerup1"
-        android:layout_alignStart="@+id/powerup1" />
+        android:layout_alignLeft="@+id/lobster"
+        android:layout_alignStart="@+id/lobster" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/powerupCost2"
+        android:gravity="center"
         android:layout_alignTop="@+id/powerupCost1"
-        android:layout_alignLeft="@+id/powerup2"
-        android:layout_alignStart="@+id/powerup2"
-        android:layout_alignRight="@+id/powerup2"
-        android:layout_alignEnd="@+id/powerup2" />
+        android:layout_alignRight="@+id/lobster"
+        android:layout_alignEnd="@+id/lobster" />
+
+
 </RelativeLayout>
