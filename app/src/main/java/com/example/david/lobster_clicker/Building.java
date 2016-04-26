@@ -1,3 +1,4 @@
+package com.example.david.lobster_clicker;
 
 /**
  * Created by David on 4/23/2016.
