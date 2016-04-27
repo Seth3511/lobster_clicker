@@ -23,7 +23,7 @@ public class BuildingContainer
 		return clickers[i].purchase(score);
 	}
 
-	public double generate()
+	public double generateLobsters()
 	{
 		double x=0;
 		for(int i=0;i<n;i++)
