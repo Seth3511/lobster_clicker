@@ -1,8 +1,7 @@
 package com.example.david.lobster_clicker;
-
 public class BuildingContainer
 {
-	Building [] clickers;
+	Building[] clickers;
 	int n;
 	
 	public BuildingContainer(int n)
@@ -21,7 +20,7 @@ public class BuildingContainer
 		return clickers[i].purchase(score);
 	}
 
-	public double generate()
+	public double generateLobsters()
 	{
 		double x=0;
 		for(int i=0;i<n;i++)
