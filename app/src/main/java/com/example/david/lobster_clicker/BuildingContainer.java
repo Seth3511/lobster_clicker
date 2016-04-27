@@ -1,7 +1,4 @@
 package com.example.david.lobster_clicker;
-
-import com.example.david.lobster_clicker.Building;
-
 public class BuildingContainer
 {
 	Building[] clickers;
