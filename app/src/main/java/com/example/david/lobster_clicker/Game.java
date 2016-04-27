@@ -26,14 +26,12 @@ public class Game extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         powerup= new Powerups();
         final BuildingContainer buildings= new BuildingContainer(1);
-        /*
-        new Thread(new Runnable() {
+
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                while(true){
-                    lobsterCount=lobsterCount+buildings.generateLobsters();
-                    display = (TextView) findViewById(R.id.countDisplay);
-                    display.setText(Math.round(lobsterCount) + " Lobsters");
+                while (true) {
+                    lobsterCount = lobsterCount + buildings.generateLobsters();
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
@@ -42,8 +40,9 @@ public class Game extends AppCompatActivity {
                 }
 
             }
-        }).start();
-        */
+        });
+        thread.start();
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         display= (TextView) findViewById(R.id.powerupCost1);
         display.setText( Math.round(powerup.getPowerupOneCost()) + " Lobsters");
@@ -113,6 +112,28 @@ public class Game extends AppCompatActivity {
                 }
             }
         });
+        //http://stackoverflow.com/questions/14814714/update-textview-every-second
+        //start
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                while (!isInterrupted()) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            display = (TextView) findViewById(R.id.countDisplay);
+                            display.setText(Math.round(lobsterCount) + " Lobsters");
+                        }
+                    });
+                }
+            }
+        };
+        t.start();
+        //end
+
+
 
     }
+
 }
