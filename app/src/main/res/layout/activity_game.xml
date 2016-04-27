@@ -9,6 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.david.lobster_clicker.Game">
 
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,6 +88,25 @@
         android:layout_below="@+id/powerup2"
         android:layout_toRightOf="@+id/countDisplay"
         android:layout_toEndOf="@+id/countDisplay" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto Clicker"
+        android:id="@+id/autoclick"
+        android:layout_below="@+id/lobster"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/autoPrice"
+        android:layout_below="@+id/autoclick"
+        android:layout_alignRight="@+id/autoclick"
+        android:layout_alignEnd="@+id/autoclick"
+        android:gravity="center" />
 
 
 </RelativeLayout>

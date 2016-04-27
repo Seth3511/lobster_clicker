@@ -1,5 +1,6 @@
 package com.example.david.lobster_clicker;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,9 +14,10 @@ public class Game extends AppCompatActivity {
     private Button lobster;
     private Button PowerupX5;
     private Button PowerupX12;
+    private Button auto;
     private Powerups powerup;
     private int lobsterMulti=1;
-    private int lobsterCount=0;
+    private double lobsterCount=0;
     private TextView display;
 
     @Override
@@ -23,18 +25,35 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         powerup= new Powerups();
+        final BuildingContainer buildings= new BuildingContainer(1);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         display= (TextView) findViewById(R.id.powerupCost1);
-        display.setText((int)powerup.getPowerupOneCost()+" Lobsters");
+        display.setText( Math.round(powerup.getPowerupOneCost()) + " Lobsters");
         display= (TextView) findViewById(R.id.powerupCost2);
-        display.setText((int)powerup.getPowerupTwoCost()+" Lobsters");
-
+        display.setText( Math.round(powerup.getPowerupTwoCost()) + " Lobsters");
+        display= (TextView) findViewById(R.id.autoPrice);
+        display.setText( Math.round(buildings.clickers[0].buildCost()) + " Lobsters");
         lobster= (Button) findViewById((R.id.lobster));
         lobster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lobsterCount= lobsterCount+ 1*lobsterMulti;
-                display= (TextView) findViewById(R.id.countDisplay);
-                display.setText(lobsterCount+" Lobsters");
+                lobsterCount = lobsterCount + 1 * lobsterMulti;
+                display = (TextView) findViewById(R.id.countDisplay);
+                display.setText(Math.round(lobsterCount) + " Lobsters");
+            }
+        });
+        auto= (Button) findViewById(R.id.autoclick);
+        auto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lobsterCount >= buildings.clickers[0].buildCost()) {
+                    lobsterCount= lobsterCount-buildings.purchase(0, lobsterCount);
+                    display = (TextView) findViewById(R.id.autoPrice);
+                    display.setText( Math.round(buildings.clickers[0].buildCost())+ " Lobsters");
+                    display = (TextView) findViewById(R.id.countDisplay);
+                    display.setText(Math.round(lobsterCount) + " Lobsters");
+
+                }
             }
         });
         homeButton = (Button) findViewById(R.id.home);
@@ -54,9 +73,9 @@ public class Game extends AppCompatActivity {
                     lobsterMulti = lobsterMulti * temp;
                     lobsterCount=lobsterCount-cost;
                     display= (TextView) findViewById(R.id.countDisplay);
-                    display.setText(lobsterCount+" Lobsters");
+                    display.setText(Math.round(lobsterCount)+" Lobsters");
                     display= (TextView) findViewById(R.id.powerupCost1);
-                    display.setText((int)powerup.getPowerupOneCost()+" Lobsters");
+                    display.setText(Math.round(powerup.getPowerupOneCost())+" Lobsters");
                 }
             }
         });
@@ -70,9 +89,9 @@ public class Game extends AppCompatActivity {
                     lobsterMulti = lobsterMulti * temp;
                     lobsterCount=lobsterCount-cost;
                     display= (TextView) findViewById(R.id.countDisplay);
-                    display.setText(lobsterCount+" Lobsters");
+                    display.setText(Math.round(lobsterCount)+" Lobsters");
                     display= (TextView) findViewById(R.id.powerupCost2);
-                    display.setText((int)powerup.getPowerupTwoCost()+" Lobsters");
+                    display.setText(Math.round(powerup.getPowerupTwoCost())+" Lobsters");
                 }
             }
         });
