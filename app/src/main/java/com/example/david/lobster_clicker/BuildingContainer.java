@@ -1,3 +1,4 @@
+package com.example.david.lobster_clicker;
 
 public class BuildingContainer
 {
