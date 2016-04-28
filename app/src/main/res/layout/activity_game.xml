@@ -140,5 +140,33 @@
         android:shadowRadius="10.0"
         android:textStyle="bold" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red Lobster 2 for $20"
+        android:id="@+id/redLobster"
+        android:layout_alignTop="@+id/autoclick"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/countDisplay"
+        android:layout_alignLeft="@+id/powerup2"
+        android:layout_alignStart="@+id/powerup2" />
+
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/redLobsterPrice"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="0.0"
+        android:shadowDy="0.0"
+        android:shadowRadius="10.0"
+        android:textStyle="bold"
+        android:layout_below="@+id/redLobster"
+        android:layout_alignLeft="@+id/redLobster"
+        android:layout_alignStart="@+id/redLobster" />
+
 
 </RelativeLayout>

@@ -15,6 +15,7 @@ public class Game extends AppCompatActivity {
     private Button PowerupX5;
     private Button PowerupX12;
     private Button auto;
+    private Button redLobster;
     private Powerups powerup;
     private int lobsterMulti=1;
     private double lobsterCount=0;
@@ -25,7 +26,7 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         powerup= new Powerups();
-        final BuildingContainer buildings= new BuildingContainer(1);
+        final BuildingContainer buildings= new BuildingContainer(2);
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -45,11 +46,13 @@ public class Game extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         display= (TextView) findViewById(R.id.powerupCost1);
-        display.setText( Math.round(powerup.getPowerupOneCost()) + " Lobsters");
+        display.setText(Math.round(powerup.getPowerupOneCost()) + " Lobsters");
         display= (TextView) findViewById(R.id.powerupCost2);
         display.setText( Math.round(powerup.getPowerupTwoCost()) + " Lobsters");
         display= (TextView) findViewById(R.id.autoPrice);
         display.setText(Math.round(buildings.clickers[0].buildCost()) + " Lobsters");
+        display= (TextView) findViewById(R.id.redLobsterPrice);
+        display.setText(Math.round(buildings.clickers[1].buildCost()) + " Lobsters");
         lobster= (Button) findViewById((R.id.lobster));
         lobster.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +70,20 @@ public class Game extends AppCompatActivity {
                     lobsterCount = lobsterCount - buildings.purchase(0, lobsterCount);
                     display = (TextView) findViewById(R.id.autoPrice);
                     display.setText(Math.round(buildings.clickers[0].buildCost()) + " Lobsters");
+                    display = (TextView) findViewById(R.id.countDisplay);
+                    display.setText(Math.round(lobsterCount) + " Lobsters");
+
+                }
+            }
+        });
+        redLobster= (Button) findViewById(R.id.redLobster);
+        redLobster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lobsterCount >= buildings.clickers[1].buildCost()) {
+                    lobsterCount = lobsterCount - buildings.purchase(1, lobsterCount);
+                    display = (TextView) findViewById(R.id.redLobsterPrice);
+                    display.setText(Math.round(buildings.clickers[1].buildCost()) + " Lobsters");
                     display = (TextView) findViewById(R.id.countDisplay);
                     display.setText(Math.round(lobsterCount) + " Lobsters");
 

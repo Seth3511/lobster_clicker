@@ -46,5 +46,8 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+        android:layout_marginTop="47dp"
+        android:textColor="#910B02"
+        android:textStyle="bold"
+        android:textSize="40dp" />
 </RelativeLayout>
