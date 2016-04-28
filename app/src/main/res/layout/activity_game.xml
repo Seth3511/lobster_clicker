@@ -8,12 +8,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.david.lobster_clicker.Game"
-    android:background="#051537">
-
+    android:background="#000000">
     <ImageView
         android:layout_width="1000dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/lobsterbackground1"
+        android:src="@drawable/water"
         android:id="@+id/imageView2"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
@@ -53,7 +52,14 @@
         android:id="@+id/countDisplay"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="0.0"
+        android:shadowDy="0.0"
+        android:shadowRadius="10.0"
+        android:textStyle="bold"
+         />
 
     <Button
         android:layout_width="wrap_content"
@@ -85,7 +91,13 @@
         android:gravity="center"
         android:layout_below="@+id/powerup2"
         android:layout_toLeftOf="@+id/countDisplay"
-        android:layout_toStartOf="@+id/countDisplay" />
+        android:layout_toStartOf="@+id/countDisplay"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="0.0"
+        android:shadowDy="0.0"
+        android:shadowRadius="10.0"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="75dp"
@@ -95,7 +107,13 @@
         android:gravity="center"
         android:layout_below="@+id/powerup2"
         android:layout_toRightOf="@+id/countDisplay"
-        android:layout_toEndOf="@+id/countDisplay" />
+        android:layout_toEndOf="@+id/countDisplay"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="0.0"
+        android:shadowDy="0.0"
+        android:shadowRadius="10.0"
+        android:textStyle="bold" />
 
     <Button
         android:layout_width="wrap_content"
@@ -114,7 +132,13 @@
         android:layout_below="@+id/autoclick"
         android:layout_alignRight="@+id/autoclick"
         android:layout_alignEnd="@+id/autoclick"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="0.0"
+        android:shadowDy="0.0"
+        android:shadowRadius="10.0"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
