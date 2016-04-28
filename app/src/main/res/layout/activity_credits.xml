@@ -8,12 +8,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.david.lobster_clicker.Credits"
-    android:background="#051537">
+    android:background="#000000">
 
     <ImageView
         android:layout_width="1000dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/lobsterbackground1"
+        android:src="@drawable/water"
         android:id="@+id/imageView2"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"

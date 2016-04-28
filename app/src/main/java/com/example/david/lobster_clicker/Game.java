@@ -31,7 +31,7 @@ public class Game extends AppCompatActivity {
             @Override
             public void run() {
                 while (true) {
-                    lobsterCount = lobsterCount + buildings.generateLobsters();
+                    lobsterCount = lobsterCount + buildings.generateLobsters()*lobsterMulti;
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
@@ -118,14 +118,21 @@ public class Game extends AppCompatActivity {
 
             @Override
             public void run() {
-                while (!isInterrupted()) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            display = (TextView) findViewById(R.id.countDisplay);
-                            display.setText(Math.round(lobsterCount) + " Lobsters");
-                        }
-                    });
+                try {
+                    while (!isInterrupted()) {
+
+                        Thread.sleep(500);
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                display = (TextView) findViewById(R.id.countDisplay);
+                                display.setText(Math.round(lobsterCount) + " Lobsters");
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         };
