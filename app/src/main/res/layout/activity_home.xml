@@ -11,14 +11,14 @@
     tools:context="com.example.david.lobster_clicker.Home"
     android:background="#051537">
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="1000dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/lobsterbackground1"
+        android:src="@drawable/lobsterbackground"
         android:id="@+id/imageView2"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
-        />
+        />-->
 
     <Button
         android:layout_width="wrap_content"
